@@ -1,0 +1,15 @@
+package com.test.oops;
+
+public class MainThread1 extends Thread{
+
+	public static void main(String[] args) {
+		MainThread1 thread = new MainThread1();
+		thread.start();
+		System.out.println("only main method function is running");		
+	}
+	public void run()
+	{
+		System.out.println("run method is running");
+	}
+
+}

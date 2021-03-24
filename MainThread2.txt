@@ -1,0 +1,29 @@
+package com.test.oops;
+
+public class MainThread2 extends MainThread1 implements Runnable {
+	public static int amount=12;
+	public static void main(String[] args) {
+		
+		MainThread2 obj = new MainThread2();
+		Thread thread = new Thread(obj);
+		thread.start();
+		//thread.setPriority(MAX_PRIORITY);
+		thread.setPriority(MIN_PRIORITY);
+
+		thread.isAlive();
+		{
+			System.out.println("run method is running");
+		}
+		System.out.println("1: "+amount);
+		amount--;
+		System.out.println("3: "+amount);
+
+		//MainThread1 obj2 = new MainThread1(); 
+		//obj2.run();
+	}
+	public void run()
+	{
+		amount--;
+		System.out.println("2: "+amount);
+	}
+}
